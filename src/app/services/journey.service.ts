@@ -65,4 +65,31 @@ export class JourneyService {
     const errors$: Observable<any> = source$.pipe(map(result => result.errors));
     return destination$;
   }
+
+  /**
+   * Create a journey
+   * @param destination wanted destination
+   * @param price wanted price
+   */
+  createJourney(destination: string, price: string): Observable<any> {
+    const source$ = this.apollo.mutate({
+      mutation: gql`
+        mutation create{
+          createJourney(input:{ price: "${price}" destination: "${destination}" }){
+            price
+            destination
+            }
+        }
+      `
+    }).pipe(shareReplay(1));
+
+    const destination$: Observable<Array<Journey>> = source$.pipe(
+      tap(result => log(result)),
+      map(result => result.data && result.data['createJourney']),
+      filter(result => result !== null)
+    );
+    const loading$: Observable<boolean> = source$.pipe(map(result => result.loading));
+    const errors$: Observable<any> = source$.pipe(map(result => result.errors));
+    return destination$;
+  }
 }

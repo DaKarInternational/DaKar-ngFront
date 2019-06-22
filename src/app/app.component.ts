@@ -13,7 +13,7 @@ export class AppComponent implements OnDestroy {
 
   isMobilePhone: MediaQueryList;
 
-  fillerNav = ['find-journey', 'create journey', 'list journey'];
+  fillerNav = ['find-journey', 'create-journey', 'list journey'];
 
   private _mobileQueryListener: () => void;
 
