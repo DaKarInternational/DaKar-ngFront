@@ -8,6 +8,7 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
+      - setup_remote_docker
       - restore_cache:
           key: DaKar-ngFront-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
