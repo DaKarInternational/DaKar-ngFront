@@ -19,7 +19,7 @@ jobs:
       - run:
           name: build image
           command: |
-            docker build -t dakarinternational/dakar-ng:latest .
+            docker-compose build
       - run:
           name: docker login
           command: |
