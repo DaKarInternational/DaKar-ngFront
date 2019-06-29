@@ -23,8 +23,12 @@ install:
   - npm install
   - ng build
   - docker-compose build
-  - docker login
-  - docker push dakarinternational/dakar-ng:latest
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
 
 #script:
 #  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
