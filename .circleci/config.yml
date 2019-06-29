@@ -19,6 +19,9 @@ jobs:
           name: build image
           command: |
             docker-compose build
+      - run:
+          name: push image
+          command: |
             docker login -p $DOCKER_PWD -u $DOCKER_USR
             docker push dakarinternational/dakar-ng
       # - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
