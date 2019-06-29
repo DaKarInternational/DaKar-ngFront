@@ -29,7 +29,3 @@ deploy:
   script: bash docker_push
   on:
     branch: master
-
-#script:
-#  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
-#  - npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
