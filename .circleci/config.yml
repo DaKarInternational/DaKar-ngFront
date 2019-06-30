@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/DaKar-ngFront
+    docker:
+      # specify the version you desire here
+      # see https://hub.docker.com/r/circleci/node/tags/
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache:
+          key: DaKar-ngFront-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: DaKar-ngFront-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+             - "node_modules"
+      - run:
+          name: build image
+          command: |
+            docker-compose build
+      - run:
+          name: docker login
+          command: |
+            docker login -p $DOCKER_PWD -u $DOCKER_USR
+      - run:
+          name: docker push
+          command: |
+            docker push dakarinternational/dakar-ng:latest
+      # - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+      # - run: npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
