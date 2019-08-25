@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Journey} from '../../models/Journey';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journey',
@@ -10,7 +11,10 @@ export class JourneyComponent {
 
   @Input('journey') journey: Journey;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
+  private goToJourneyDetail(journeyId: string) {
+    this.router.navigate(['/journey-detail'], { queryParams: { id: journeyId } });
+  }
 }
