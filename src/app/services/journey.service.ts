@@ -31,7 +31,7 @@ export class JourneyService {
     }).pipe(shareReplay(1));
 
     const destination$: Observable<Journey> = source$.pipe(
-      tap(result => log(result)),
+      tap(result => console.log(result)),
       map(result => result.data && result.data['findJourneyById']),
       filter(result => result !== null)
     );
@@ -57,7 +57,7 @@ export class JourneyService {
     }).pipe(shareReplay(1));
 
     const destination$: Observable<Array<Journey>> = source$.pipe(
-      tap(result => log(result)),
+      tap(result => console.log(result)),
       map(result => result.data && result.data['searchJourney']),
       filter(result => result !== null)
     );
@@ -92,4 +92,5 @@ export class JourneyService {
     const errors$: Observable<any> = source$.pipe(map(result => result.errors));
     return destination$;
   }
+
 }

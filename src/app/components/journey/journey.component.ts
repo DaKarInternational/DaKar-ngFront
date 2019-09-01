@@ -21,4 +21,5 @@ export class JourneyComponent {
   private goToJourneyDetail(journeyId: string) {
     this.router.navigate(['/journey-detail'], { queryParams: { journeyId: journeyId } });
   }
+
 }
