@@ -14,7 +14,11 @@ export class JourneyComponent {
   constructor(private router: Router) {
   }
 
+  /**
+   * Redirect to the journey detail component
+   * @param journeyId id of the journey to redirect
+   */
   private goToJourneyDetail(journeyId: string) {
-    this.router.navigate(['/journey-detail'], { queryParams: { id: journeyId } });
+    this.router.navigate(['/journey-detail'], { queryParams: { journeyId: journeyId } });
   }
 }

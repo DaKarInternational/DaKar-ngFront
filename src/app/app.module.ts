@@ -16,7 +16,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatCardModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatDividerModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GraphQLModule} from './graphql.module';
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatCardModule,
     MatPaginatorModule,
+    MatDividerModule,
     GraphQLModule,
     HttpClientModule,
     RouterModule.forRoot(

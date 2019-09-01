@@ -1,3 +1,25 @@
-<p>
-  journey-detail works!
-</p>
+<div *ngIf="journey != null">
+  <mat-card class="journey-card">
+    <mat-card-header>
+      <div mat-card-avatar class="journey-header"></div>
+      <mat-card-title>{{journey.destination}}</mat-card-title>
+      <mat-card-subtitle>{{journey.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-list>
+      <h3 mat-subheader>Useful informations</h3>
+      <mat-list-item>
+          Visa
+      </mat-list-item>
+      <mat-list-item>
+          Currency
+      </mat-list-item>
+      <mat-list-item>
+          Change
+      </mat-list-item>
+      <h3 mat-subheader>Where to sleep</h3>
+      <mat-list-item *ngFor="let sleep of sleeps">
+        {{sleep}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

@@ -19,6 +19,8 @@ export class FindJourneyComponent {
   journeysFound: Journey[];
   destination = new FormControl('');
   id = new FormControl('');
+  paginatorSize = 100;
+  numberOfProductsDisplayedInPage = 6;
 
   constructor(private journeyService: JourneyService) {
     this.journeysFound = [];
@@ -38,9 +40,9 @@ export class FindJourneyComponent {
   private searchByCriterias() {
     this.journeyService.searchByCriterias(this.destination.value)
       .pipe(
-        tap(result => log(result)),
+        tap(result => console.log(result)),
         filter(res => Array.from(res).length > 0),
-        tap(result => log(result))
+        tap(result => console.log(result))
       )
       .subscribe(
         (response) => {
@@ -53,7 +55,7 @@ export class FindJourneyComponent {
 
   private searchById() {
     this.journeyService.searchById(this.id.value)
-      .pipe(tap(result => log(result)))
+      .pipe(tap(result => console.log(result)))
       .subscribe(
         (response) => {
           this.journey = response;

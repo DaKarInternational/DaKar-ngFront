@@ -12,19 +12,16 @@
   <button type="submit" mat-flat-button class="input-box" color="primary">Submit</button>
 </form>
 
-
 <div *ngIf="journeysFound.length !== 0" class="card-deck-container">
+
+  <mat-divider></mat-divider>
+
   <div *ngFor="let journey of journeysFound" class="card-item">
     <app-journey [journey]="journey"></app-journey>
   </div>
 
-</div> 
+</div>
 <div class="paginator mat-elevation-z4" *ngIf="journeysFound.length !== 0">
-  <mat-paginator
-    [length]="paginatorSize"
-    [pageSize]="numberOfProductsDisplayedInPage"
-    [pageSizeOptions]="[12, 24]"
-    (page)="updateProductsDisplayedInPage($event)">
+  <mat-paginator [length]="paginatorSize" [pageSize]="numberOfProductsDisplayedInPage" [pageSizeOptions]="[6, 12, 24]" (page)="updateProductsDisplayedInPage($event)">
   </mat-paginator>
 </div>
-
