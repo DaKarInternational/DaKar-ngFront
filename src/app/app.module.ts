@@ -22,9 +22,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {JourneyComponent} from './components/journey/journey.component';
 import {FindJourneyComponent} from './components/find-journey/find-journey.component';
+import { CreateJourneyComponent } from './components/create-journey/create-journey.component';
 
 const appRoutes: Routes = [
   { path: 'find-journey', component: FindJourneyComponent },
+  { path: 'create-journey', component: CreateJourneyComponent }
 ];
 
 
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     JourneyComponent,
-    FindJourneyComponent
+    FindJourneyComponent,
+    CreateJourneyComponent
   ],
   imports: [
     BrowserModule,
