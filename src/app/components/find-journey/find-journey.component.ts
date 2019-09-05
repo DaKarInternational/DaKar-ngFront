@@ -19,6 +19,8 @@ export class FindJourneyComponent {
   journeysFound: Journey[];
   destination = new FormControl('');
   id = new FormControl('');
+  paginatorSize = 100;
+  numberOfProductsDisplayedInPage = 6;
 
   constructor(private journeyService: JourneyService) {
     this.journeysFound = [];

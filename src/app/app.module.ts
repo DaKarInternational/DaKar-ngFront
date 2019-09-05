@@ -14,7 +14,10 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatCardModule,
+  MatPaginatorModule,
+  MatDividerModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GraphQLModule} from './graphql.module';
@@ -23,10 +26,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {JourneyComponent} from './components/journey/journey.component';
 import {FindJourneyComponent} from './components/find-journey/find-journey.component';
 import { CreateJourneyComponent } from './components/create-journey/create-journey.component';
+import { JourneyDetailComponent } from './components/journey-detail/journey-detail.component';
 
 const appRoutes: Routes = [
   { path: 'find-journey', component: FindJourneyComponent },
-  { path: 'create-journey', component: CreateJourneyComponent }
+  { path: 'create-journey', component: CreateJourneyComponent },
+  { path: 'journey-detail', component: JourneyDetailComponent },
 ];
 
 
@@ -35,7 +40,8 @@ const appRoutes: Routes = [
     AppComponent,
     JourneyComponent,
     FindJourneyComponent,
-    CreateJourneyComponent
+    CreateJourneyComponent,
+    JourneyDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +59,9 @@ const appRoutes: Routes = [
     MatListModule,
     MatButtonModule,
     MatInputModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatDividerModule,
     GraphQLModule,
     HttpClientModule,
     RouterModule.forRoot(

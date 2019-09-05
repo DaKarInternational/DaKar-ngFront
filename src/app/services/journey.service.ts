@@ -92,4 +92,5 @@ export class JourneyService {
     const errors$: Observable<any> = source$.pipe(map(result => result.errors));
     return destination$;
   }
+
 }
