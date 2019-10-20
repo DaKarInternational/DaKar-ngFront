@@ -16,6 +16,37 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## SSL
+Run `ng serve --ssl --ssl-key ssl/server.key --ssl-cert ssl/server.crt` to serve with HTTPS
+
+// enable or disable SSL
+--ssl <boolean: defaults to false>
+// path to root certificate
+--ssl-cert <string: defaults to "ssl/server.crt">
+// path to private key
+--ssl-key <string: defaults to "ssl/server.key">
+
+// Create a certificat
+openssl req -newkey rsa:2048 -x509 -nodes -keyout server.key -new -out server.crt -sha256 -days 365
+
+// Certificat format
+
+C = FR
+ST = France
+L = Paris
+O = DaKar
+OU = DaKar Unit
+emailAddress = email@domain.com
+CN = localhost
+
+// Trust certificat
+If your launch the app, you'll see a warning on your browser because the created certificat is not signed. You can request a Certification Authority to sign it or sign it yourself (local solution).
+
+// Ressources
+https://blog.fullstacktraining.com/serve-an-angular-app-on-localhost-via-https/
+https://medium.com/@rubenvermeulen/running-angular-cli-over-https-with-a-trusted-certificate-4a0d5f92747a
+
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
