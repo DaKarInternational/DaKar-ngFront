@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { JourneyService } from '../../services/journey.service';
-import { ActivatedRoute } from '@angular/router';
-import { tap } from 'rxjs/operators';
-import { Journey } from '../../models/Journey';
+import {Component, OnInit} from '@angular/core';
+import {JourneyService} from '../../services/journey.service';
+import {ActivatedRoute} from '@angular/router';
+import {filter, tap} from 'rxjs/operators';
+import {Journey} from '../../models/Journey';
+import {FormControl} from '@angular/forms';
 
 /**
  * Describe the detail of the journey
@@ -15,8 +16,9 @@ import { Journey } from '../../models/Journey';
 export class JourneyDetailComponent implements OnInit {
 
   journey: Journey;
-  // TODO 2019/08 : Delete when there will be more informations about the journey
+  // TODO 2019/08 : Delete when there will be more information about the journey
   sleeps: string[];
+  destination = new FormControl('');
 
   constructor(private journeyService: JourneyService, private router: ActivatedRoute) { }
 
@@ -46,4 +48,34 @@ export class JourneyDetailComponent implements OnInit {
       );
   }
 
+  /**
+   * method executed when user clicks on the update button
+   *
+   */
+  onSubmit() {
+    if (this.destination.value !== undefined && this.destination.value.trim().length !== 0) {
+      console.log('destination updated: ', this.destination.value);
+      this.updateJourney();
+    }
+  }
+
+  /**
+   * method that handles the calls and responses to the journeyService
+   */
+  private updateJourney() {
+    this.journey.destination = this.destination.value;
+    this.journeyService.updateJourney(this.journey)
+      .pipe(
+        tap(result => console.log(result)),
+        filter(res => Array.from(res).length > 0),
+        tap(result => console.log(result))
+      )
+      .subscribe(
+        (response) => {
+          console.log('JourneyDetail: response that we got from the back', response);
+        },
+        (err) => console.error(err),
+        () => console.log('JourneyDetail: Done updating the journey')
+      );
+  }
 }

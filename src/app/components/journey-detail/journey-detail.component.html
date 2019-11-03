@@ -21,5 +21,12 @@
         {{sleep}}
       </mat-list-item>
     </mat-list>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="input-box">
+        <input matInput [formControl]="destination" placeholder="destination" value="{{journey.destination}}">
+      </mat-form-field>
+      <br>
+      <button type="submit" mat-flat-button class="input-box" color="primary" i18n>Submit</button>
+    </form>
   </mat-card>
 </div>

@@ -42,28 +42,54 @@ export class JourneyService {
 
   /**
    * search by destination
+   * @param journey to update
+   */
+  updateJourney(journey: Journey): Observable<Array<Journey>> {
+      const source$ = this.apollo.mutate({
+          mutation: gql`
+              mutation search{
+                  updateJourney(input:{ id: "${journey.id}" destination: "${journey.destination}" }) {
+                      id
+                      destination
+                  }
+              }
+          `
+    }).pipe(shareReplay(1));
+
+      const destination$: Observable<Array<Journey>> = source$.pipe(
+          tap(result => log(result)),
+          map(result => result.data && result.data['updateJourney']),
+          filter(result => result !== null)
+      );
+      const loading$: Observable<boolean> = source$.pipe(map(result => result.loading));
+      const errors$: Observable<any> = source$.pipe(map(result => result.errors));
+      return destination$;
+  }
+
+  /**
+   * search by destination
    * @param destination searched
    */
   searchByCriterias(destination: string): Observable<Array<Journey>> {
-    const source$ = this.apollo.query({
-      query: gql`
-        query search{
-          searchJourney(criteria: {destination: {contains: "${destination}"}}) {
-            id
-            destination
-          }
-        }
-      `
-    }).pipe(shareReplay(1));
+      const source$ = this.apollo.query({
+          query: gql`
+              query search{
+                  searchJourney(criteria: {destination: {contains: "${destination}"}}) {
+                      id
+                      destination
+                  }
+              }
+          `
+      }).pipe(shareReplay(1));
 
-    const destination$: Observable<Array<Journey>> = source$.pipe(
-      tap(result => console.log(result)),
-      map(result => result.data && result.data['searchJourney']),
-      filter(result => result !== null)
-    );
-    const loading$: Observable<boolean> = source$.pipe(map(result => result.loading));
-    const errors$: Observable<any> = source$.pipe(map(result => result.errors));
-    return destination$;
+      const destination$: Observable<Array<Journey>> = source$.pipe(
+          tap(result => console.log(result)),
+          map(result => result.data && result.data['searchJourney']),
+          filter(result => result !== null)
+      );
+      const loading$: Observable<boolean> = source$.pipe(map(result => result.loading));
+      const errors$: Observable<any> = source$.pipe(map(result => result.errors));
+      return destination$;
   }
 
   /**
