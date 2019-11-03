@@ -1,11 +1,16 @@
 <div class="main-container" [class.example-is-mobile]="isMobilePhone.matches">
 
-  <mat-toolbar color="primary" class="example-toolbar">
-    <span>{{pageTitle}}</span>
-    <button mat-icon-button color="warn" (click)="sideNav.toggle()">
-      <mat-icon aria-label="Example icon-button with a menu icon">menu</mat-icon>
-    </button>
-    <h1 class="input-box">{{title}}</h1>
+  <mat-toolbar color="primary" class="example-toolbar toolbar-container">
+    <div class="toolbar-div-left">
+        <span>{{pageTitle}}</span>
+        <button mat-icon-button color="warn" (click)="sideNav.toggle()">
+          <mat-icon aria-label="Example icon-button with a menu icon">menu</mat-icon>
+        </button>
+        <h1 class="input-box">{{title}}</h1>
+    </div>
+    <div>
+        <button mat-icon-button class="button-home-screen" (click)="addToHomeScreen()" *ngIf="showButton">Add to home screen</button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container"

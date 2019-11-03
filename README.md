@@ -46,6 +46,42 @@ If your launch the app, you'll see a warning on your browser because the created
 https://blog.fullstacktraining.com/serve-an-angular-app-on-localhost-via-https/
 https://medium.com/@rubenvermeulen/running-angular-cli-over-https-with-a-trusted-certificate-4a0d5f92747a
 
+## PWA - Progressive Web App
+
+// Launch Services Workers
+
+1) Build the application
+
+ng build --prod
+
+2) Serve the application
+
+http-server -p 8181 -c-1 dist/DaKar-ngFront/
+
+// Test PWA - Caching (Statics content)
+
+1) Go to your web browser an launch developper tool
+
+2) Go to "Network" tab
+
+3) Click on dropdown menu "Online" et choose "Offline"
+
+4) Reload the page, then you see that the application is still running
+
+// Test PWA - New version notification
+
+If you want to service worker take in account a new version of your app, you have the rebuild it.
+
+1) Make a change on a web file (for example on css)
+
+2) Rebuild the app => ng build --prod
+
+3) When the build is done, reload the page
+
+4) Then a dialog suggest you to a load a new version of the application
+
+5) Then accept, and you'll see your changes
+
 
 ## Running unit tests
 
