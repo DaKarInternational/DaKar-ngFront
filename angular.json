@@ -61,6 +61,22 @@
               "serviceWorker": true,
               "ngswConfigPath": "src/ngsw-config.json"
             },
+            "ssl": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ssl.ts"
+                }
+              ]
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            },
             "fr": {
               "aot": true,
               "outputPath": "dist/DaKar-ngFront-fr/",
@@ -79,6 +95,12 @@
           "configurations": {
             "production": {
               "browserTarget": "DaKar-ngFront:build:production"
+            },
+            "ssl": {
+              "browserTarget": "DaKar-ngFront:build:ssl"
+            },
+            "test": {
+              "browserTarget": "DaKar-ngFront:build:test"
             },
             "fr": {
               "browserTarget": "DaKar-ngFront:build:fr"
