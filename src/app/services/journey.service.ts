@@ -47,7 +47,7 @@ export class JourneyService {
   updateJourney(journey: Journey): Observable<Array<Journey>> {
       const source$ = this.apollo.mutate({
           mutation: gql`
-              mutation search{
+              mutation update{
                   updateJourney(input:{ id: "${journey.id}" destination: "${journey.destination}" }) {
                       id
                       destination
@@ -56,14 +56,14 @@ export class JourneyService {
           `
     }).pipe(shareReplay(1));
 
-      const destination$: Observable<Array<Journey>> = source$.pipe(
+      const journeyEdited: Observable<Array<Journey>> = source$.pipe(
           tap(result => log(result)),
           map(result => result.data && result.data['updateJourney']),
           filter(result => result !== null)
       );
       const loading$: Observable<boolean> = source$.pipe(map(result => result.loading));
       const errors$: Observable<any> = source$.pipe(map(result => result.errors));
-      return destination$;
+      return journeyEdited;
   }
 
   /**

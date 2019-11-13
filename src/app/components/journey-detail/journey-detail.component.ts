@@ -19,6 +19,8 @@ export class JourneyDetailComponent implements OnInit {
   // TODO 2019/08 : Delete when there will be more information about the journey
   sleeps: string[];
   destination = new FormControl('');
+  price = new FormControl('');
+  editionMode: true;
 
   constructor(private journeyService: JourneyService, private router: ActivatedRoute) { }
 
@@ -53,10 +55,13 @@ export class JourneyDetailComponent implements OnInit {
    *
    */
   onSubmit() {
-    if (this.destination.value !== undefined && this.destination.value.trim().length !== 0) {
-      console.log('destination updated: ', this.destination.value);
-      this.updateJourney();
+    if (!(this.price.value !== undefined && this.price.value.trim().length !== 0)) {
+      return;
     }
+    if (!(this.destination.value !== undefined && this.destination.value.trim().length !== 0)) {
+      return;
+    }
+    this.updateJourney();
   }
 
   /**
