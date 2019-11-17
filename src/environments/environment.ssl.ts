@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'http://dakar.lambla.eu:8080/'
+  serverUrl: 'https://localhost:8443/'
 };

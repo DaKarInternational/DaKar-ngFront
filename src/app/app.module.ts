@@ -27,6 +27,8 @@ import {JourneyComponent} from './components/journey/journey.component';
 import {FindJourneyComponent} from './components/find-journey/find-journey.component';
 import { CreateJourneyComponent } from './components/create-journey/create-journey.component';
 import { JourneyDetailComponent } from './components/journey-detail/journey-detail.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'find-journey', component: FindJourneyComponent },
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
       // ,{ enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

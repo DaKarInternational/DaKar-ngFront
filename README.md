@@ -18,6 +18,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## SSL
 Run `ng serve --ssl --ssl-key ssl/server.key --ssl-cert ssl/server.crt` to serve with HTTPS
+add `--configuration=ssl` to use the https server endpoint
 
 // enable or disable SSL
 --ssl <boolean: defaults to false>
@@ -45,6 +46,59 @@ If your launch the app, you'll see a warning on your browser because the created
 // Ressources
 https://blog.fullstacktraining.com/serve-an-angular-app-on-localhost-via-https/
 https://medium.com/@rubenvermeulen/running-angular-cli-over-https-with-a-trusted-certificate-4a0d5f92747a
+
+## PWA - Progressive Web App
+
+// Launch Services Workers
+
+1) Build the application
+
+ng build --prod
+
+2) Serve the application
+
+http-server -p 8181 -c-1 dist/DaKar-ngFront/
+
+// Test PWA - Caching (Statics content)
+
+1) Go to your web browser an launch developper tool
+
+2) Go to "Network" tab
+
+3) Click on dropdown menu "Online" et choose "Offline"
+
+4) Reload the page, then you see that the application is still running
+
+// Test PWA - New version notification
+
+If you want to service worker take in account a new version of your app, you have the rebuild it.
+
+1) Make a change on a web file (for example on css)
+
+2) Rebuild the app => ng build --prod
+
+3) When the build is done, reload the page
+
+4) Then a dialog suggest you to a load a new version of the application
+
+5) Then accept, and you'll see your changes
+
+## Environments
+
+For each environment you are managing, you can have a different configuration.
+
+On `src/environments`, you have a file for each environment.
+The default one is environment.ts, then you have others for production, etc...
+
+To launch the app on a specific environmment, just do 
+`ng build --configuration=production`for prod environment for example
+or you can also `ng serve --configuration=production``
+
+In order to your app knows the environment file to use when you add the `configuration` parameter, you have to go on angular.json file, and on `configurations` you have to add the environment name, then on `fileReplacements` specify the environment file to take on account. 
+
+Also you have to add on `serve`part your new environment if you want to launch it with ng serve.
+
+You can see the existed environments to inspire you. 
 
 
 ## Running unit tests
