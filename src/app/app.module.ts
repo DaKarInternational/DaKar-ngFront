@@ -5,19 +5,19 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatCardModule,
-  MatPaginatorModule,
-  MatDividerModule
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatDividerModule, MatButtonToggleModule, MatSlideToggleModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GraphQLModule} from './graphql.module';
@@ -45,33 +45,35 @@ const appRoutes: Routes = [
     CreateJourneyComponent,
     JourneyDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    MatPaginatorModule,
-    MatDividerModule,
-    GraphQLModule,
-    HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes
-      // ,{ enableTracing: true } // <-- debugging purposes only
-    ),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatRadioModule,
+        MatCheckboxModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatListModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCardModule,
+        MatPaginatorModule,
+        MatDividerModule,
+        GraphQLModule,
+        HttpClientModule,
+        RouterModule.forRoot(
+            appRoutes
+            // ,{ enableTracing: true } // <-- debugging purposes only
+        ),
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        MatButtonToggleModule,
+        MatSlideToggleModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
