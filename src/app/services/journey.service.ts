@@ -41,16 +41,17 @@ export class JourneyService {
   }
 
   /**
-   * search by destination
+   * update a Journey
    * @param journey to update
    */
   updateJourney(journey: Journey): Observable<Array<Journey>> {
       const source$ = this.apollo.mutate({
           mutation: gql`
               mutation update{
-                  updateJourney(input:{ id: "${journey.id}" destination: "${journey.destination}" }) {
+                  updateJourney(input:{ id: "${journey.id}" destination: "${journey.destination}" price: "${journey.price}"}) {
                       id
                       destination
+                      price
                   }
               }
           `
