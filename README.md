@@ -43,7 +43,7 @@ CN = localhost
 // Trust certificat
 If your launch the app, you'll see a warning on your browser because the created certificat is not signed. You can request a Certification Authority to sign it or sign it yourself (local solution).
 
-// Ressources
+// Resources
 https://blog.fullstacktraining.com/serve-an-angular-app-on-localhost-via-https/
 https://medium.com/@rubenvermeulen/running-angular-cli-over-https-with-a-trusted-certificate-4a0d5f92747a
 

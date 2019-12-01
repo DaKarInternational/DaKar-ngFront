@@ -27,7 +27,6 @@ export class FindJourneyComponent {
   }
 
   onSubmit() {
-
     if (this.id.value !== undefined && this.id.value.trim().length !== 0) {
       console.log('id searched: ', this.id.value);
       this.searchById();
