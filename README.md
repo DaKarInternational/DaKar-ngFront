@@ -1,6 +1,8 @@
 # DaKarNgFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+
+https://dakarinternational.github.io/DaKar-ngFront  
+http://dakar.lambla.eu/
 
 ## Development server
 
@@ -125,6 +127,10 @@ then you have to translate each text adding a target element below source elemen
 To run the translate version, use : npm run start:fr -- --port=4201 (you can also run without specifying port, so it would be 4200)
 
 
+## Run with docker-compose
+```bash
+docker-compose -f docker-compose.yml up -d --no-deps app-ng
+```
 
 ## Further help
 
