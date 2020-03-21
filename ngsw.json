@@ -1,0 +1,85 @@
+{
+  "configVersion": 1,
+  "timestamp": 1584811621652,
+  "index": "https://dakarinternational.github.io/DaKar-ngFront/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dakarinternational.github.io/DaKar-ngFront/es2015-polyfills.c5dd28b362270c767b34.js",
+        "https://dakarinternational.github.io/DaKar-ngFront/favicon.ico",
+        "https://dakarinternational.github.io/DaKar-ngFront/index.html",
+        "https://dakarinternational.github.io/DaKar-ngFront/main.29054a565a033f954be2.js",
+        "https://dakarinternational.github.io/DaKar-ngFront/polyfills.8bbb231b43165d65d357.js",
+        "https://dakarinternational.github.io/DaKar-ngFront/runtime.26209474bfa8dc87a77c.js",
+        "https://dakarinternational.github.io/DaKar-ngFront/styles.8826705ccd40bf0031fd.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-128x128.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-144x144.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-152x152.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-192x192.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-384x384.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-512x512.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-72x72.png",
+        "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-performance",
+      "patterns": [
+        "\\/graphql"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://dakarinternational.github.io/DaKar-ngFront/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://dakarinternational.github.io/DaKar-ngFront/es2015-polyfills.c5dd28b362270c767b34.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
+    "https://dakarinternational.github.io/DaKar-ngFront/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://dakarinternational.github.io/DaKar-ngFront/index.html": "98d92eda4c889d4faa13ab845e3081e6a7837b85",
+    "https://dakarinternational.github.io/DaKar-ngFront/main.29054a565a033f954be2.js": "ebc20c573c09595716220e0fb2034ecc86f6a24e",
+    "https://dakarinternational.github.io/DaKar-ngFront/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
+    "https://dakarinternational.github.io/DaKar-ngFront/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://dakarinternational.github.io/DaKar-ngFront/styles.8826705ccd40bf0031fd.css": "f20df0b171073b8c13cc0e63e4082b6cee2e51dd"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
