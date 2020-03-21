@@ -138,6 +138,8 @@ npx ngh --dir=dist/DaKar-ngFront
 
 By default angular-cli-ghpages will create a new branch inside the repository and Github Pages will use that branch for hosting. To specify a different branch you can add the branch option
 --branch=branchname
+But if you specify be careful, because it could remove the contents of the branch
+Otherwise the default branch is "gh-pages"
 
 source : https://medium.com/@Mister_10k/3-commands-to-host-your-angular-application-on-github-pages-3ae1056eefc8
 
