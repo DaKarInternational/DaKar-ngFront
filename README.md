@@ -1,6 +1,8 @@
 # DaKarNgFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+
+https://dakarinternational.github.io/DaKar-ngFront  
+http://dakar.lambla.eu/
 
 ## Development server
 
@@ -144,6 +146,10 @@ Otherwise the default branch is "gh-pages"
 source : https://medium.com/@Mister_10k/3-commands-to-host-your-angular-application-on-github-pages-3ae1056eefc8
 
 
+## Run with docker-compose
+```bash
+docker-compose -f docker-compose.yml up -d --no-deps app-ng
+```
 
 ## Further help
 
