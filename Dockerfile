@@ -23,7 +23,7 @@ RUN npm install
 COPY . .
 
 # Run the angular in product
-RUN npm run build
+RUN npm run build -- --prod
 
 # Stage 2
 FROM nginx:alpine

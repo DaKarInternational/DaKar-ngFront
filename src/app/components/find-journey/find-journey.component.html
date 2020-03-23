@@ -1,19 +1,27 @@
 <form (ngSubmit)="onSubmit()">
   <mat-form-field class="input-box">
-    <textarea matInput [formControl]="id" placeholder="id"></textarea>
+    <input matInput [formControl]="id" placeholder="id">
   </mat-form-field>
 
   <mat-form-field class="input-box">
-    <textarea matInput [formControl]="destination" placeholder="destination"></textarea>
+    <input matInput [formControl]="destination" placeholder="destination">
   </mat-form-field>
 
   <br>
 
-  <button type="submit" mat-flat-button class="input-box" color="primary">Submit</button>
+  <button type="submit" mat-flat-button class="input-box" color="primary" i18n>Submit</button>
 </form>
 
-<ul>
-  <li *ngFor="let journey of journeysFound">
+<div *ngIf="journeysFound.length !== 0" class="card-deck-container">
+
+  <mat-divider></mat-divider>
+
+  <div *ngFor="let journey of journeysFound" class="card-item">
     <app-journey [journey]="journey"></app-journey>
-  </li>
-</ul>
+  </div>
+
+</div>
+<div class="paginator mat-elevation-z4" *ngIf="journeysFound.length !== 0">
+  <mat-paginator [length]="paginatorSize" [pageSize]="numberOfProductsDisplayedInPage" [pageSizeOptions]="[6, 12, 24]" (page)="updateProductsDisplayedInPage($event)">
+  </mat-paginator>
+</div>

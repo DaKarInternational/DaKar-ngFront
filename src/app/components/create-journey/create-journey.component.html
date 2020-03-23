@@ -1,0 +1,23 @@
+<div class="container"> 
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form">
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Destination" name="destination" formControlName="destination">
+      <mat-error *ngIf="!formGroup.controls['destination'].valid && formGroup.controls['destination'].touched">
+        Destination is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Price" i18n-placeholder="@@pricePlaceholder" name="price" formControlName="price">
+      <mat-error *ngIf="!formGroup.controls['price'].valid && formGroup.controls['price'].touched">
+        Price is required
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid" i18n>Submit Form</button>
+    </div>
+
+  </form>
+</div>

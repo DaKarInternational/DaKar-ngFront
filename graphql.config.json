@@ -46,7 +46,7 @@
     },
     {
       "name": "Prod Graph",
-      "url": "http://dakar.lambla.eu:8080/graphql",
+      "url": "https://dakar.project.lambla.eu/graphql/",
       "options" : {
         "headers": {
           "user-agent" : "JS GraphQL"

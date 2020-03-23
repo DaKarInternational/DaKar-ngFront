@@ -19,13 +19,14 @@ export class FindJourneyComponent {
   journeysFound: Journey[];
   destination = new FormControl('');
   id = new FormControl('');
+  paginatorSize = 100;
+  numberOfProductsDisplayedInPage = 6;
 
   constructor(private journeyService: JourneyService) {
     this.journeysFound = [];
   }
 
   onSubmit() {
-
     if (this.id.value !== undefined && this.id.value.trim().length !== 0) {
       console.log('id searched: ', this.id.value);
       this.searchById();
