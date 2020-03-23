@@ -124,6 +124,25 @@ then you have to translate each text adding a target element below source elemen
 
 To run the translate version, use : npm run start:fr -- --port=4201 (you can also run without specifying port, so it would be 4200)
 
+## Github pages
+
+1. Builds the application for production with this command :  
+
+ng build --prod --base-href "https://dakarinternational.github.io/DaKar-ngFront/"
+
+It puts the build files in the dist folder and also sets up the address where the site will be hosted.
+
+2. Hosting
+
+npx ngh --dir=dist/DaKar-ngFront
+
+By default angular-cli-ghpages will create a new branch inside the repository and Github Pages will use that branch for hosting. To specify a different branch you can add the branch option
+--branch=branchname
+But if you specify be careful, because it could remove the contents of the branch
+Otherwise the default branch is "gh-pages"
+
+source : https://medium.com/@Mister_10k/3-commands-to-host-your-angular-application-on-github-pages-3ae1056eefc8
+
 
 
 ## Further help
