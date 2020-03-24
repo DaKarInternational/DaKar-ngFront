@@ -42,3 +42,4 @@ workflows:
               only:
                 - develop
                 - master
+                - feature/105_cleanup
